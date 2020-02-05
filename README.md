@@ -36,3 +36,19 @@ https://www.tutorialspoint.com/flask/flask_sqlite.htm
 
 
 sudo apt install sqlite3
+sqlite3 database.db
+.tables
+.schema students
+
+sqlite3 students.db
+.tables
+.schema students
+SELECT * FROM students;
+
+
+
+pip install flask-sqlalchemy
+
+student = students('fred', 'fred city', 'fred address', 'fred pin')
+db.session.add(student)
+db.session.commit()

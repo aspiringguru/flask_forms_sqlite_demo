@@ -18,7 +18,6 @@ class students(db.Model):
     city = db.Column(db.String(50))
     addr = db.Column(db.String(200))
     pin = db.Column(db.String(10))
-
     def __init__(self, name, city, addr,pin):
        self.name = name
        self.city = city
@@ -31,6 +30,8 @@ class students(db.Model):
 #def home():
 #   return render_template('home.html')
 def show_all():
+   temp = db.session.query(students).all()
+   print("temp=", temp)
    temp = students.query.all()
    print("students.query.all() = ", temp)
    return render_template('show_all.html', students = temp )
